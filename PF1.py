@@ -16,10 +16,10 @@ from sklearn.neighbors import KNeighborsClassifier
 #Para que se visualice correctamente
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
-#Archivo CSV a mostrar
-ruta = r'A:\\Downloaded\PF-V1.4.csv'
 
-datos = pd.read_csv(ruta)
+#Archivo CSV a mostrar
+
+datos = pd.read_csv("https://raw.githubusercontent.com/AlAgcn/ProyectoFinal-data/main/PF-V1.5.csv")
 datos = datos.drop(['Marca temporal', 'email', 'cursado'], axis=1)
 
 
@@ -52,7 +52,6 @@ clf = RandomForestClassifier(n_estimators=45, max_depth=8, random_state=101)
 # Ajuste el modelo utilizando los datos de entrenamiento
 clf.fit(x_train, y_train)
 
-print(x_train.columns)
 # Guardar el modelo entrenado en un archivo
 with open('modelo_entrenado2.pkl', 'wb') as f:
     pickle.dump(clf, f)
