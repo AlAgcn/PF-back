@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 import pickle
-import json
 import pandas as pd
 
     # Cargar el modelo entrenado desde un archivo
@@ -41,4 +40,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(port=8080, debug=True)
+    app.run(port=5000, debug=True)
